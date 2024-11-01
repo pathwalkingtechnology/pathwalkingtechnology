@@ -4,7 +4,7 @@ import { GA_TRACKING_ID } from "../lib/gtag";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="es">
       <Head>
         {/* Script de Google Analytics */}
         <script
