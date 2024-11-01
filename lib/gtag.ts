@@ -1,8 +1,8 @@
 // lib/gtag.ts
 declare global {
   interface Window {
-    gtag: (action: string, config?: { [key: string]: string | number | boolean }) => void;
-    dataLayer: any[];
+    gtag: (action: string, params?: Record<string, string | number | boolean>) => void;
+    dataLayer: Array<string | number | boolean>;
   }
 }
 
@@ -14,9 +14,9 @@ if (!GA_TRACKING_ID) {
 
 // Función para rastrear vistas de página
 export const pageview = (url: string) => {
-  if (window.gtag) {
-    window.gtag('config', GA_TRACKING_ID, { page_path: url });
-  }
+  window.gtag('config', GA_TRACKING_ID, {
+    page_path: url,
+  });
 };
 
 // Función para rastrear eventos
@@ -26,11 +26,9 @@ export const event = ({ action, category, label, value }: {
   label: string; 
   value: number;
 }) => {
-  if (window.gtag) {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value,
-    });
-  }
+  window.gtag('event', action, {
+    event_category: category,
+    event_label: label,
+    value,
+  });
 };
