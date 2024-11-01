@@ -1,6 +1,13 @@
 // lib/gtag.ts
 export const GA_TRACKING_ID = 'G-1Q69KJEDRF';
 
+declare global {
+  interface Window {
+    gtag: (action: string, config?: { [key: string]: any }) => void;
+    dataLayer: any[];
+  }
+}
+
 // Función para rastrear vistas de página
 export const pageview = (url: string) => {
   window.gtag('config', GA_TRACKING_ID, {

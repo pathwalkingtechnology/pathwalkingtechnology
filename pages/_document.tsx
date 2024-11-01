@@ -1,5 +1,6 @@
 // pages/_document.tsx
 import { Html, Head, Main, NextScript } from "next/document";
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default function Document() {
   return (
@@ -8,7 +9,7 @@ export default function Document() {
         {/* Google Analytics script */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -16,7 +17,7 @@ export default function Document() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${gtag.GA_TRACKING_ID}', {
+              gtag('config', '${GA_TRACKING_ID}', {
                 page_path: window.location.pathname,
               });
             `,
