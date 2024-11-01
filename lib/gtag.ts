@@ -1,8 +1,12 @@
 // lib/gtag.ts
 declare global {
   interface Window {
-    gtag: (action: string, params?: Record<string, string | number | boolean>) => void;
-    dataLayer: Array<string | number | boolean>;
+    gtag: (
+      action: string,
+      idOrParams?: string | Record<string, string | number | boolean>,
+      params?: Record<string, string | number | boolean>
+    ) => void;
+    dataLayer: (string | number | boolean)[];
   }
 }
 
@@ -20,10 +24,15 @@ export const pageview = (url: string) => {
 };
 
 // Función para rastrear eventos
-export const event = ({ action, category, label, value }: { 
-  action: string; 
-  category: string; 
-  label: string; 
+export const event = ({
+  action,
+  category,
+  label,
+  value,
+}: {
+  action: string;
+  category: string;
+  label: string;
   value: number;
 }) => {
   window.gtag('event', action, {
