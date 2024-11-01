@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
+import Navbar from '@/components/Navbar';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -19,6 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
+    <Navbar />
   return <Component {...pageProps} />;
 }
