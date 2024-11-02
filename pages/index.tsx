@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Path Walking Technology - Desarrollamos Web Apps Personalizadas para tu Negocio" />
         <meta property="og:description" content="Potencia tu presencia digital con aplicaciones accesibles en cualquier dispositivo, diseñadas a medida para adaptarse y crecer con tu negocio." />
-        <meta property="og:image" content="/logo.png" /> {/* Reemplaza con una imagen válida */}
+        <meta property="og:image" content="/logo.png" /> 
         <meta property="og:url" content="https://pathweb.vercel.app/" />
         <meta property="og:type" content="website" />
       </Head>

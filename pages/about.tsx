@@ -1,5 +1,6 @@
 // pages/about.tsx
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -57,9 +58,9 @@ export default function About() {
         <section className="text-center mt-10">
           <h2 className="text-2xl font-semibold text-blue-600 mb-4">¿Listo para potenciar tu negocio con Path?</h2>
           <p className="text-gray-700 mb-6">Estamos aquí para ayudarte a llevar tu negocio al siguiente nivel con soluciones tecnológicas a medida.</p>
-          <a href="/contact" className="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300">
+          <Link href="/contact" className="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300">
             Contáctanos
-          </a>
+          </Link>
         </section>
       </main>
     </>
