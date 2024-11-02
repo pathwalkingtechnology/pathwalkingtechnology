@@ -1,10 +1,28 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Definir las fuentes Geist */
+@font-face {
+  font-family: 'GeistMono';
+  src: url('/fonts/GeistMonoVF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplicar la fuente en todo el sitio */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  font-family: 'Geist', Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +35,27 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Geist', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER Y FOOTER */
+
+header, footer {
+  font-family: 'GeistMono', sans-serif;
+}
+
+header nav ul li a, footer a {
+  color: var(--foreground);
+  transition: color 0.2s;
+}
+
+header nav ul li a:hover, footer a:hover {
+  color: #00AFEF; /* Color destacado */
+}
+
+header, footer {
+  background-color: var(--background);
+  border-color: #2A4760; /* Bordes en color institucional */
 }

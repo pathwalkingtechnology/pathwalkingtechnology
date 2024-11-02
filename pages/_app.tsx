@@ -4,7 +4,8 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -15,11 +16,17 @@ export default function App({ Component, pageProps }: AppProps) {
       gtag.pageview(url);
     };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-    <Navbar />
-  return <Component {...pageProps} />;
+
+  return (
+    <>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
