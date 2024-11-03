@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Chatbot from "../components/Chatbot";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Header />
       <Component {...pageProps} />
+      <Chatbot />
       <Footer />
     </>
   );
