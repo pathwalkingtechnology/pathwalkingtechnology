@@ -59,3 +59,13 @@ header, footer {
   background-color: var(--background);
   border-color: #2A4760; /* Bordes en color institucional */
 }
+/* CHAT BOT */
+.chat-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
